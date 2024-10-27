@@ -67,11 +67,10 @@ const loginWithPhoneAndOtp = asyncHandler(async (req, res) => {
 
 
     const options={
-        httpOnly: true,
-        secure: false, // Change to 'false' for local development
-        sameSite: 'Strict',
-        path: '/'
-     }
+        httpOnly:true,
+        sameSite:'None',
+        secure:true
+      }
 
    return res.status(200).cookie("accessToken",accessToken,options)
    .cookie("refreshToken",refreshToken,options).json(new ApiResponse(200,{},"Login successfully !!"));
@@ -84,11 +83,10 @@ const logout = asyncHandler(async (req, res) => {
     
 
     const options={
-        httpOnly: true,
-        secure: false, // Change to 'false' for local development
-        sameSite: 'Strict',
-        path: '/'
-     }
+        httpOnly:true,
+        sameSite:'None',
+        secure:true
+      }
 
 
    

@@ -104,7 +104,7 @@ const logout = asyncHandler(async (req, res) => {
     res.clearCookie('accessToken', options);
     res.clearCookie('refreshToken', options);
 
-    res.status(200).json(new ApiResponse(404,{},"User logged out successfully !!"));
+    res.status(200).json(new ApiResponse(200,{},"User logged out successfully !!"));
 });
 
 const getCurrentUser =asyncHandler(async (req,res) => {
